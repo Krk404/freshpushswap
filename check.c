@@ -6,11 +6,31 @@
 /*   By: jyildiri <jyildiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 16:53:57 by jyildiri          #+#    #+#             */
-/*   Updated: 2022/12/06 18:04:19 by jyildiri         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:12:39 by jyildiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	is_only_space(char **argv)
+{
+	int	i;
+	int	n;
+
+	i = 1;
+	while (argv[i] != NULL)
+	{
+		n = 0;
+		while (argv[i][n] != '\0')
+		{
+			if (!is_whitespace(argv[i][n]))
+				return (0);
+			n++;
+		}
+		i++;
+	}
+	return (1);
+}
 
 char	*check_args(int argc, char **argv)
 {
@@ -20,10 +40,9 @@ char	*check_args(int argc, char **argv)
 	j = 0;
 	str = NULL;
 	if (argc < 2)
-	{
-		ft_putstr_fd("Error\n", 2);
 		return (NULL);
-	}
+	if (is_only_space(argv))
+		return (NULL);
 	if (argc == 2)
 	{
 		if (!is_there_a_space(argv[1]))

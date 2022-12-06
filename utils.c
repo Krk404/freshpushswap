@@ -6,7 +6,7 @@
 /*   By: jyildiri <jyildiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 16:54:46 by jyildiri          #+#    #+#             */
-/*   Updated: 2022/12/04 17:21:38 by jyildiri         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:13:17 by jyildiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	is_there_a_space(char *str)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (str[i])
 	{
 		if (is_whitespace(str[i]))
