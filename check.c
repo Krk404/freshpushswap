@@ -6,7 +6,7 @@
 /*   By: jyildiri <jyildiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 16:53:57 by jyildiri          #+#    #+#             */
-/*   Updated: 2022/11/01 20:41:05 by jyildiri         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:04:19 by jyildiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ char	*check_args(int argc, char **argv)
 	}
 	if (check_str(str))
 		return (str);
-	else
-		ft_putstr_fd("Error\n", 2);
+	ft_putstr_fd("Error\n", 2);
+	free(str);
 	return (NULL);
 }
 
@@ -75,7 +75,7 @@ int	check_str(char *argv)
 	i = 0;
 	while (i < n - 1)
 	{
-		if ((argv[i] == '-') && ft_isdigit(argv[i + 1]))
+		if ((argv[i] == '-') && !ft_isdigit(argv[i + 1]))
 			return (0);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: jyildiri <jyildiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 16:54:18 by jyildiri          #+#    #+#             */
-/*   Updated: 2022/11/01 20:37:13 by jyildiri         ###   ########.fr       */
+/*   Updated: 2022/12/06 17:52:35 by jyildiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,14 @@ int		is_str_empty(char *str);
 int		is_whitespace(int c);
 int		is_there_a_space(char *str);
 
+void	free_stack(t_stack *stack);
 void	swap(t_stack **stack, t_stack *stack_op, int stack_name);
 void	rotate(t_stack **stack, t_stack *stack_op, int stack_name);
 void	reverse_rotate(t_stack **stack, t_stack *stack_op, int stack_name);
 void	push(t_stack **stack_from, t_stack **stack_to, t_stack *stack_op,
 			int stack_name);
 void	find_algo(t_infos *stacks);
-void	sort_three(t_stack *stack_a, t_stack *stack_op);
+void	sort_three(t_stack **stack_a, t_stack *stack_op);
 void	sort_two(t_infos *stacks);
 void	get_values(int *tab, int i, t_stack *stack);
 void	sort_small_stack(t_infos *stacks);
@@ -78,5 +79,7 @@ void	ft_freetab(char **tab);
 t_stack	*args_to_stack(char *str);
 t_stack	*lstnew(int content);
 t_stack	*simplify(t_stack *a_stack, int *tab_int);
+
+void print_stack(t_stack *astack);
 
 #endif

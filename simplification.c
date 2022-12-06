@@ -6,7 +6,7 @@
 /*   By: jyildiri <jyildiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:42:06 by jyildiri          #+#    #+#             */
-/*   Updated: 2022/11/01 20:01:46 by jyildiri         ###   ########.fr       */
+/*   Updated: 2022/12/06 17:51:49 by jyildiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,11 @@ t_stack	*simplify(t_stack *a_stack, int *tab_int)
 		index++;
 	}
 	if (dupes_checker(tab_int, n) == 0)
+	{
+		free(tab_int);
+		free_stack(a_stack);
 		return (NULL);
+	}
 	free(tab_int);
 	return (a_stack);
 }

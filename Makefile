@@ -5,7 +5,7 @@ CC = gcc
 LIBFT = libft/libft.a
 
 SRCS = check.c stack.c operations.c main.c  simplification.c sort_small_stack.c\
-		radix_sort.c utils.c
+		radix_sort.c utils.c security.c
 OBJS = $(SRCS:.c=.o)
 
 .c.o:
