@@ -6,7 +6,7 @@
 /*   By: jyildiri <jyildiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 16:53:57 by jyildiri          #+#    #+#             */
-/*   Updated: 2022/12/06 20:12:39 by jyildiri         ###   ########.fr       */
+/*   Updated: 2022/12/08 15:29:04 by jyildiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,10 @@ int	is_only_space(char **argv)
 	return (1);
 }
 
-char	*check_args(int argc, char **argv)
+char	*check_args(int argc, char **argv, int j)
 {
-	int		j;
 	char	*str;
 
-	j = 0;
 	str = NULL;
 	if (argc < 2)
 		return (NULL);
@@ -46,7 +44,10 @@ char	*check_args(int argc, char **argv)
 	if (argc == 2)
 	{
 		if (!is_there_a_space(argv[1]))
+		{
+			ft_putstr_fd("Error\n", 2);
 			return (NULL);
+		}
 	}
 	while (argv[++j])
 	{
@@ -100,27 +101,5 @@ int	check_str(char *argv)
 	}
 	if (ft_atoli(argv) > 2147483647 || ft_atoli(argv) < -2147483648)
 		return (0);
-	return (1);
-}
-
-int	ft_checknbr(char c)
-{
-	if ((c > 47 && c < 58) || c == ' ' || c == '-' || (c >= 9 && c <= 13))
-		return (1);
-	else
-		return (0);
-}
-
-int	a_is_sorted(t_stack *stack_a)
-{
-	t_stack	*tmp;
-
-	tmp = stack_a;
-	while (tmp->next)
-	{
-		if (tmp->content > tmp->next->content)
-			return (0);
-		tmp = tmp->next;
-	}
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: jyildiri <jyildiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 16:54:38 by jyildiri          #+#    #+#             */
-/*   Updated: 2022/12/06 17:28:30 by jyildiri         ###   ########.fr       */
+/*   Updated: 2022/12/08 14:03:47 by jyildiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	sort_three(t_stack **stack_a, t_stack *stack_op)
 	get_values(i, 3, *stack_a);
 	if (i[0] < i[1] && i[1] > i[2])
 	{
-		
 		if (i[0] < i[2])
 		{
 			swap(stack_a, stack_op, A);
@@ -75,8 +74,6 @@ void	sort_three(t_stack **stack_a, t_stack *stack_op)
 		else if (i[0] > i[2])
 		{
 			reverse_rotate(stack_a, stack_op, A);
-	// printf("---stack a----%p\n", stack_a);
-	// print_stack(stack_a);
 		}
 	}
 	else if (i[0] > i[1] && i[0] > i[2])
@@ -87,7 +84,6 @@ void	sort_three(t_stack **stack_a, t_stack *stack_op)
 	}
 	else if (i[0] > i[1] && i[0] < i[2] && i[1] < i[2])
 		swap(stack_a, stack_op, A);
-
 }
 
 void	sort_small_stack(t_infos *stacks)

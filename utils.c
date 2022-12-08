@@ -6,7 +6,7 @@
 /*   By: jyildiri <jyildiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 16:54:46 by jyildiri          #+#    #+#             */
-/*   Updated: 2022/12/06 20:13:17 by jyildiri         ###   ########.fr       */
+/*   Updated: 2022/12/08 14:05:08 by jyildiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,34 +73,4 @@ void	print_operations(t_stack *stack_op)
 			ft_putstr_fd("sb\n", 1);
 		tmp = tmp->next;
 	}
-}
-
-int	is_there_a_space(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (is_whitespace(str[i]))
-			return (1);
-		i++;
-	}
-	ft_putstr_fd("Error\n", 2);
-	return (0);
-}
-
-void print_stack(t_stack *astack)
-{
-	t_stack *tmp;
-
-	if (astack == NULL)
-		return ;
-	tmp = astack;
-	while(tmp)
-	{
-		printf("%i ", tmp->content);
-		tmp = tmp->next;
-	}
-	printf("\n");
 }
